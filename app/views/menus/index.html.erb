@@ -1,0 +1,60 @@
+<h1>MENU</h1>
+
+<input id="tab01" type="radio" name="tabinput" checked>
+<input id="tab02" type="radio" name="tabinput">
+<input id="tab03" type="radio" name="tabinput">
+
+<ul class="tabnav">
+  <p>Category</p>
+  <li><label class="tabnav01" for="tab01">main</label></li>
+  <li><label class="tabnav02" for="tab02">drink</label></li>
+  <li><label class="tabnav03" for="tab03">dessert</label></li>
+</ul>
+
+<div class="tabcontent">
+
+  <% @menus.each do |menu| %>
+    <% case menu.category %>
+    <% when "main" %>
+      <div id="tabcontent01">
+        <ul>
+        <li>
+          <%= link_to(menu.name, "/menus/#{menu.id}") %>
+          ￥<%= menu.price %>
+          <%= menu.calorie %>cal
+          <%= menu.category %>
+        </li>
+        <%= link_to "edit", "/menus/#{menu.id}/edit" %>
+        <%= link_to "delete", "/menus/#{menu.id}/destroy",{method:"post"} %>
+        </ul>
+      </div>
+    <% when "drink" %>
+      <div id="tabcontent02">
+        <ul>
+        <li>
+          <%= link_to(menu.name, "/menus/#{menu.id}") %>
+          ￥<%= menu.price %>
+          <%= menu.calorie %>cal
+          <%= menu.category %>
+        </li>
+        <%= link_to "edit", "/menus/#{menu.id}/edit" %>
+        <%= link_to "delete", "/menus/#{menu.id}/destroy",{method:"post"} %>
+        </ul>
+      </div>
+    <% when "dessert" %>
+      <div id="tabcontent03">
+          <ul>
+        <li>
+          <%= link_to(menu.name, "/menus/#{menu.id}") %>
+          ￥<%= menu.price %>
+          <%= menu.calorie %>cal
+          <%= menu.category %>
+        </li>
+        <%= link_to "edit", "/menus/#{menu.id}/edit" %>
+        <%= link_to "delete", "/menus/#{menu.id}/destroy",{method:"post"} %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+  <%= link_to("GO to Create",new_menu_path) %>
+</div>

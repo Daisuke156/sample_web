@@ -20,3 +20,117 @@
 h1{
   text-align:center;
 }
+
+/* tabnav */
+.tabnav{
+  margin: 0;
+    padding: 0;
+}
+.tabnav li{
+    display: inline;
+}
+.tabnav li label{
+    display: inline-block;
+    background: #405dca;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none;
+  cursor: pointer;
+}
+input[name=tabinput]{
+  display: none;
+}
+#tab01:checked ~ .tabnav .tabnav01,
+#tab02:checked ~ .tabnav .tabnav02,
+#tab03:checked ~ .tabnav .tabnav03{
+    background: #ddd;
+    color: #333;
+}
+
+/* tabcontent */
+.tabcontent{
+    padding: 20px;
+    border: 1px dotted #ccc;
+}
+.tabcontent div{
+  display: none;
+}
+#tab01:checked ~ .tabcontent #tabcontent01,
+#tab02:checked ~ .tabcontent #tabcontent02,
+#tab03:checked ~ .tabcontent #tabcontent03 {
+  display: block;
+}
+
+.slide {
+  width:1000px;
+  height:250px;
+  background-color:gray;
+  margin:0 auto;
+  display:none;
+}
+
+.active {
+  display:block;
+}
+
+.slide-wrapper {
+  text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+  color: blue;
+  padding: 60px 0;
+}
+
+.change-btn-wrapper {
+  width: 500px;
+  margin: 20px auto;
+  font-size: 18px;
+}
+
+.change-btn-wrapper:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+
+.prev-btn {
+  cursor: pointer;
+  float: left;
+  display: none;
+}
+
+.next-btn {
+  cursor: pointer;
+  float: right;
+}
+
+.slides {
+  padding: 0;
+}
+
+.index-btn-wrapper {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.index-btn {
+  display: inline-block;
+  color: #4e90af;
+  background-color: #e0f5ff;
+  width: 40px;
+  padding: 6px 0;
+  margin: 0 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.checked{
+  color:red;
+}
+
+.index-btn:hover {
+  color: #fff;
+  background-color: #5cabd0;
+}

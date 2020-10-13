@@ -1,0 +1,10 @@
+<% menus.each do |menu| %>
+<li>
+  <%= link_to(menu.name, "/menus/#{menu.id}") %>
+  ￥<%= menu.price %>
+  <%= menu.calorie %>cal
+  <%= menu.category %>
+</li>
+    <%= link_to "edit", "/menus/#{menu.id}/edit" %>
+    <%= link_to "delete", "/menus/#{menu.id}/destroy",{method:"post"} %>
+<% end %>
