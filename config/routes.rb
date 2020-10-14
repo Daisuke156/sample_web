@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'users/new'
-
   root 'static_pages#home' # => root_path
   get  '/test', to: 'static_pages#test'
   get  '/about',  to: 'static_pages#about'
@@ -9,6 +7,12 @@ Rails.application.routes.draw do
   get  'menus/new' => 'menus#new'
   get  'menus/:id' => 'menus#show'
   post 'menus/:id/destroy' => 'menus#destroy'
+  get  '/signup',  to: 'users#new'
+  post '/signup',  to: 'users#create'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+  resources :users
   resources :menus
 
 end
