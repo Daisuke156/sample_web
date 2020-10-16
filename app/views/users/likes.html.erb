@@ -1,0 +1,10 @@
+<h1><%=@user.name%>'s Like</h1>
+<div id="menu">
+  <ul >
+    <% @likes.each do |like| %>
+      <% menu = Menu.find_by(id: like.menu_id) %>
+      <il><%= link_to menu.name, "/menus/#{menu.id}", {class: "like"} %></il>
+    <% end %>
+  </ul>
+</div>
+<div><%= link_to "←back", :back %></div>

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  post  '/likes/:menu_id/create',  to: 'likes#create'
+  post  '/likes/:menu_id/destroy',  to: 'likes#destroy'
+  get   'users/:id/likes',      to: 'users#likes'
   resources :users
   resources :menus
 

@@ -31,6 +31,7 @@ class MenusController < ApplicationController
   
   def show
     @menu = Menu.find_by(id: params[:id])
+    @likes_count = Like.where(menu_id: @menu.id).count
   end
   
   private

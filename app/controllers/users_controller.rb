@@ -7,6 +7,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def likes
+    @user = User.find_by(id: params[:id])
+    @likes = Like.where(user_id: @user.id)
+  end
+  
   def new
     @user = User.new
   end
