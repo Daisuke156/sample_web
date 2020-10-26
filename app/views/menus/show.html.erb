@@ -1,9 +1,11 @@
-<div>
+<div class="container">
+  <%= image_tag 'food_gyouza_age', :size => '200x200' %>
   <h1><%= @menu.name %></h1>
   <li><%= @menu.category %></li>
   <li>￥<%= @menu.price %></li>
   <li><%= @menu.calorie %>cal</li>
   <div><%= @menu.coment %></div>
+</div>
   <% if Like.find_by(user_id: @current_user.id, menu_id: @menu.id) %>
     <%= link_to("/likes/#{@menu.id}/destroy", {method:"post"}) do %>
       <span class="fa fa-heart like-btn-unlike"></span>
@@ -15,4 +17,3 @@
   <% end %>
   <%= @likes_count %>
   <div><%= link_to "←To index", menus_path %></div>
-</div>
