@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get   'users/:id/likes',      to: 'users#likes'
   resources :users
   resources :menus
-
+  resources :account_activations, only: [:edit]
+  
 end

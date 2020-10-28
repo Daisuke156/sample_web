@@ -226,7 +226,6 @@ input[name=tabinput]{
 }
 /* home's slide */
 .slide {
-  width:1000px;
   height:250px;
   background-color:gray;
   margin:0 auto;
@@ -257,7 +256,6 @@ input[name=tabinput]{
   display: block;
 }
 
-
 .prev-btn {
   cursor: pointer;
   float: left;
@@ -267,10 +265,6 @@ input[name=tabinput]{
 .next-btn {
   cursor: pointer;
   float: right;
-}
-
-.slides {
-  padding: 0;
 }
 
 .index-btn-wrapper {
